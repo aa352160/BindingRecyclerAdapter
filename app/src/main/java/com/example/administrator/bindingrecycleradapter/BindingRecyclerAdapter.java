@@ -136,10 +136,24 @@ public abstract class BindingRecyclerAdapter<T extends ViewDataBinding, M> exten
     }
 
     /**
+     * 获取尾布局
+     */
+    public View getFooter(){
+        return footerView;
+    }
+
+    /**
      * 添加头布局
      */
     public void addHeader(View view){
         headerView=view;
+    }
+
+    /**
+     * 获取头布局
+     */
+    public View getHeader(){
+        return headerView;
     }
 
     public void setOnItemClickListener(OnItemClickListener<T,M> onItemClickListener) {
