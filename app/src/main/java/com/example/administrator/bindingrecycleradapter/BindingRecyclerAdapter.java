@@ -84,12 +84,14 @@ public abstract class BindingRecyclerAdapter<T extends ViewDataBinding, M> exten
         final BaseRecyclerViewHolder baseHolder = (BaseRecyclerViewHolder) holder;
         onBindViewHolder(baseHolder.binding,datas.get(position), holder, position);
 
+        //item点击事件
         if (onItemClickListener!=null) {
+            final int finalPosition = position;
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    onItemClickListener.onItemClick(baseHolder.binding,datas.get(
-                            holder.getAdapterPosition()),holder.getAdapterPosition());
+                    onItemClickListener.onItemClick(
+                            baseHolder.binding,datas.get(finalPosition), finalPosition);
                 }
             });
         }
