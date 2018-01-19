@@ -185,4 +185,11 @@ public abstract class BindingRecyclerAdapter<T extends ViewDataBinding, M> exten
         datas.clear();
         notifyDataSetChanged();
     }
+
+    /**
+     * 由于getItemCount方法会被header或footer影响，如果需要获取数据的数量，推荐使用该方法
+     */
+    public int getSize(){
+        return datas.size();
+    }
 }
